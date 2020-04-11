@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/helpline_title"
+        android:fontFamily="sans-serif-condensed-light"
+        android:textColor="@color/colorSecondary"
+        android:gravity="center"
+        android:paddingTop="30dp"
+        android:textSize="35sp"/>
+    <ListView
+        android:id="@+id/helpline_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"/>
+</LinearLayout>

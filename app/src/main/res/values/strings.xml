@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">COVID_19 Tracker</string>
+    <string name="title_home">Home</string>
+    <string name="title_world">World</string>
+    <string name="title_precautions">Precautions</string>
+    <string name="title_helpline">Helplines</string>
+    <string name="WHO_logo">World Health Organisation Logo</string>
+    <string name="precautions">
+        <b><font fgcolor="#3700B3"><u>Basic protective measures against the new coronavirus</u></font></b>
+        \n\n
+Stay aware of the latest information on the COVID-19 outbreak, available on the WHO website and through your national and local public health authority. Most people who become infected experience mild illness and recover, but it can be more severe for others. Take care of your health and protect others by doing the following:\n
+        \n<font fgcolor="#6200EE">Wash your hands frequently</font>\n
+Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.\n
+Why? Washing your hands with soap and water or using alcohol-based hand rub kills viruses that may be on your hands.\n
+\n
+        <font fgcolor="#6200EE">Maintain social distancing</font>\n
+Maintain at least 1 metre (3 feet) distance between yourself and anyone who is coughing or sneezing.\n
+Why? When someone coughs or sneezes they spray small liquid droplets from their nose or mouth which may contain virus. If you are too close, you can breathe in the droplets, including the COVID-19 virus if the person coughing has the disease.\n
+\n
+        <font fgcolor="#6200EE">Avoid touching eyes, nose and mouth</font>\n
+Why? Hands touch many surfaces and can pick up viruses. Once contaminated, hands can transfer the virus to your eyes, nose or mouth. From there, the virus can enter your body and can make you sick.\n
+\n
+        <font fgcolor="#6200EE">Practice respiratory hygiene</font>\n
+Make sure you, and the people around you, follow good respiratory hygiene. This means covering your mouth and nose with your bent elbow or tissue when you cough or sneeze. Then dispose of the used tissue immediately.\n
+Why? Droplets spread virus. By following good respiratory hygiene you protect the people around you from viruses such as cold, flu and COVID-19.\n
+        \n
+        <font fgcolor="#6200EE">If you have fever, cough and difficulty breathing, seek medical care early</font>\n
+Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. Follow the directions of your local health authority.\n
+Why? National and local authorities will have the most up to date information on the situation in your area. Calling in advance will allow your health care provider to quickly direct you to the right health facility. This will also protect you and help prevent spread of viruses and other infections.\n
+\n
+        <font fgcolor="#6200EE">Stay informed and follow advice given by your healthcare provider</font>\n
+Stay informed on the latest developments about COVID-19. Follow advice given by your healthcare provider, your national and local public health authority or your employer on how to protect yourself and others from COVID-19.\n
+Why? National and local authorities will have the most up to date information on whether COVID-19 is spreading in your area. They are best placed to advise on what people in your area should be doing to protect themselves.\n
+\n\n
+        <font fgcolor="#3700B3"><b><u>Protection measures for persons who are in or have recently visited (past 14 days) areas where COVID-19 is spreading</u></b></font>\n\n
+    Follow the guidance outlined above.\n\n
+        <font fgcolor="#6200EE">Stay at home if you begin to feel unwell, even with mild symptoms such as headache and slight runny nose, until you recover.</font> \n
+Why? Avoiding contact with others and visits to medical facilities will allow these facilities to operate more effectively and help protect you and others from possible COVID-19 and other viruses.\n\n
+        <font fgcolor="#6200EE">If you develop fever, cough and difficulty breathing, seek medical advice promptly as this may be due to a respiratory infection or other serious condition.\nCall in advance and tell your provider of any recent travel or contact with travelers.</font>\n
+Why? Calling in advance will allow your health care provider to quickly direct you to the right health facility. This will also help to prevent possible spread of COVID-19 and other viruses.\n
+    </string>
+    <string name="stay_home"><font fgcolor="#6200EE">STAY</font><font fgcolor="#FFFFFF"> HOME.</font><font fgcolor="#6200EE">STAY</font><font fgcolor="#FFFFFF"> SAFE.</font></string>
+    <string name="salute">We Salute Everyone Fighting In The Frontliners.</string>
+    <string name="link_to_web"><font fgcolor="#6200EE">INFO SOURCE:</font><font fgcolor="#FFFFFF"> covid19india.org CROWD SOURCED DATABASE</font></string>
+    <string name="search_country_helper_text">Search countries(Ex:World,Italy,China..)</string>
+    <string name="total_cases">Total Number Of Cases</string>
+    <string name="total">Total</string>
+    <string name="active_cases">Active Cases</string>
+    <string name="recovered">Recovered</string>
+    <string name="death">Death</string>
+    <string name="critical">Critical</string>
+    <string name="today_cases">Today New Cases</string>
+    <string name="today_death">Today Death</string>
+    <string name="india">INDIA</string>
+    <string name="precautions_title">PRECAUTIONS</string>
+    <string name="helpline_title">HELPLINE</string>
+    <string name="placeholder_num">0</string>
+    <string name="placeholder_num1">+0</string>
+    <string name="statewise">Statewise</string>
+    <string name="state">State</string>
+    <string name="c">C</string>
+    <string name="a">A</string>
+    <string name="r">R</string>
+    <string name="d">D</string>
+</resources>

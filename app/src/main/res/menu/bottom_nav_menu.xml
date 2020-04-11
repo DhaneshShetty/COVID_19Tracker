@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/outline_donut_small_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_world"
+        android:icon="@drawable/outline_track_changes_black_24dp"
+        android:title="@string/title_world" />
+
+    <item
+        android:id="@+id/navigation_precautions"
+        android:icon="@drawable/outline_menu_book_black_24dp"
+        android:title="@string/title_precautions" />
+
+    <item
+        android:id="@+id/navigation_helpline"
+        android:icon="@drawable/outline_ring_volume_black_24dp"
+        android:title="@string/title_helpline"/>
+
+</menu>
