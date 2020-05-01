@@ -44,7 +44,7 @@ public class DashboardFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_dashboard, container, false);
         final Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://corona.lmao.ninja/countries/")
+                .baseUrl("https://corona.lmao.ninja/v2/countries/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         initViews();
