@@ -2,24 +2,31 @@ package com.example.covid_19tracker.Fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.covid_19tracker.Adapters.StateListAdapter;
 import com.example.covid_19tracker.Custom_classes.ApiData;
+import com.example.covid_19tracker.Custom_classes.Statewise;
 import com.example.covid_19tracker.Interfaces.StateDataInterface;
 import com.example.covid_19tracker.R;
+import com.example.covid_19tracker.StateActivity;
+import com.google.android.material.button.MaterialButton;
 
+import java.util.List;
 import java.util.Objects;
 
 import retrofit2.Call;
@@ -28,35 +35,45 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class HomeFragment extends Fragment {
-    private View root;
+public class MainActivity extends AppCompatActivity {
+
     private TextView totalCaseIndia, totalCaseIndiaDelta, activeCaseIndia, activeCaseIndiaDelta, recoveredIndia, recoveredIndiaDelta, deathIndia, deathIndiaDelta;
-    private ListView listView;
-    Activity activity;
+MaterialButton worldButton,infoButton;
 
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        if(context instanceof Activity)
-        {
-            activity=(Activity)context;
-        }
-    }
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        root = inflater.inflate(R.layout.fragment_home, container, false);
-        ConnectivityManager connectivityManager = (ConnectivityManager) Objects.requireNonNull(getActivity()).getSystemService(Context.CONNECTIVITY_SERVICE);
-        assert connectivityManager != null;
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_home);
+        ConnectivityManager connectivityManager = (ConnectivityManager) Objects.requireNonNull(getSystemService(Context.CONNECTIVITY_SERVICE));
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo == null || networkInfo.isFailover()) {
-            Toast.makeText(getContext(), "Please Check Your Network Connection", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Please Check Your Network Connection", Toast.LENGTH_LONG).show();
         }
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.covid19india.org/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         initViews();
+        MaterialButton learnMore=findViewById(R.id.learn_more_button);
+        learnMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, StateActivity.class));
+            }
+        });
+        worldButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, WorldActivity.class));
+            }
+        });
+        infoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, PrecautionsFragment.class));
+            }
+        });
         StateDataInterface dataInterface = retrofit.create(StateDataInterface.class);
         Call<ApiData> apiDataCall = dataInterface.getStatesData();
         apiDataCall.enqueue(new Callback<ApiData>() {
@@ -71,8 +88,6 @@ public class HomeFragment extends Fragment {
                     recoveredIndiaDelta.setText(response.body().getStatewise().get(0).getDeltarecovered());
                     deathIndia.setText(response.body().getStatewise().get(0).getDeaths());
                     deathIndiaDelta.setText(response.body().getStatewise().get(0).getDeltadeaths());
-                    StateListAdapter stateListAdapter = new StateListAdapter(activity, response.body().getStatewise());
-                    listView.setAdapter(stateListAdapter);
                 }
             }
 
@@ -81,18 +96,20 @@ public class HomeFragment extends Fragment {
 
             }
         });
-        return root;
+
     }
 
     private void initViews() {
-        totalCaseIndia = root.findViewById(R.id.total_number);
-        totalCaseIndiaDelta = root.findViewById(R.id.total_delta);
-        activeCaseIndia = root.findViewById(R.id.active_number);
-        activeCaseIndiaDelta = root.findViewById(R.id.active_delta);
-        recoveredIndia = root.findViewById(R.id.recovered_number);
-        recoveredIndiaDelta = root.findViewById(R.id.recovered_delta);
-        deathIndia = root.findViewById(R.id.death_number);
-        deathIndiaDelta = root.findViewById(R.id.death_delta);
-        listView = root.findViewById(R.id.list_states);
+        totalCaseIndia = findViewById(R.id.total_number);
+        totalCaseIndiaDelta = findViewById(R.id.total_delta);
+        activeCaseIndia =findViewById(R.id.active_number);
+        activeCaseIndiaDelta = findViewById(R.id.active_delta);
+        recoveredIndia = findViewById(R.id.recovered_number);
+        recoveredIndiaDelta =findViewById(R.id.recovered_delta);
+        deathIndia = findViewById(R.id.death_number);
+        deathIndiaDelta = findViewById(R.id.death_delta);
+        worldButton=findViewById(R.id.world_button);
+        infoButton=findViewById(R.id.info_button);
+
     }
 }
